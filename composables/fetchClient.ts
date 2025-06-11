@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
-import type { TodoType } from "~/types";
+import type { TodoType } from '~/types';
 
 const fetchApiValues = {
-  baseUrl: "https://shrimo.com/fake-api/todos",
-  todosQueryKey: ["todos"],
+  baseUrl: 'https://shrimo.com/fake-api/todos',
+  todosQueryKey: ['todos']
 };
 
 export const fetchQueryParams = {
@@ -13,8 +13,8 @@ export const fetchQueryParams = {
     queryFn: () =>
       axios
         .get(fetchApiValues.baseUrl)
-        .then((res) => res)
-        .catch(() => alert("Failed to fetch todos!")),
+        .then(res => res)
+        .catch(() => alert('Failed to fetch todos!'))
   },
   updateTodoQueryParams: {
     queryKey: fetchApiValues.todosQueryKey,
@@ -22,11 +22,11 @@ export const fetchQueryParams = {
       axios
         .put(`${fetchApiValues.baseUrl}/${todo._id}`, todo)
         .then(() => {
-          alert("Todo was successfully updated!");
+          alert('Todo was successfully updated!');
         })
         .catch(() => {
-          alert("Fail while updating!");
-        }),
+          alert('Fail while updating!');
+        })
   },
   deleteTodoQueryParams: {
     queryKey: fetchApiValues.todosQueryKey,
@@ -34,11 +34,11 @@ export const fetchQueryParams = {
       axios
         .delete(`${fetchApiValues.baseUrl}/${todo._id}`)
         .then(() => {
-          alert("Todo was successfully deleted!");
+          alert('Todo was successfully deleted!');
         })
         .catch(() => {
-          alert("Fail while deleting!");
-        }),
+          alert('Fail while deleting!');
+        })
   },
   addTodoQueryParams: {
     queryKey: fetchApiValues.todosQueryKey,
@@ -46,10 +46,10 @@ export const fetchQueryParams = {
       axios
         .post(`${fetchApiValues.baseUrl}`, todo)
         .then(() => {
-          alert("Todo was successfully added!");
+          alert('Todo was successfully added!');
         })
         .catch(() => {
-          alert("Fail while adding!");
-        }),
-  },
+          alert('Fail while adding!');
+        })
+  }
 };

@@ -1,2 +1,2 @@
-export * from "./FetchApi";
-export * from "./TodoType";
+export * from './FetchApi';
+export * from './TodoType';

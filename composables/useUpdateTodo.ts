@@ -1,5 +1,5 @@
-import { useMutation, useQueryClient } from "@tanstack/vue-query";
-import type { TodoType } from "~/types";
+import { useMutation, useQueryClient } from '@tanstack/vue-query';
+import type { TodoType } from '~/types';
 
 export const useUpdateTodos = () => {
   const { mutate } = useMutation(fetchQueryParams.updateTodoQueryParams);
@@ -10,7 +10,7 @@ export const useUpdateTodos = () => {
     mutate(todo, {
       onSettled: () => {
         queryClient.invalidateQueries();
-      },
+      }
     });
   };
 

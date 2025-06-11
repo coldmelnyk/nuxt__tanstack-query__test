@@ -1,5 +1,5 @@
-import { VueQueryDevtools } from "@tanstack/vue-query-devtools";
+import { VueQueryDevtools } from '@tanstack/vue-query-devtools';
 
-export default defineNuxtPlugin((nuxt) => {
-  nuxt.provide("VueQueryDevtools", VueQueryDevtools);
+export default defineNuxtPlugin(nuxt => {
+  nuxt.provide('VueQueryDevtools', VueQueryDevtools);
 });

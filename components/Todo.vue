@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-import type { TodoType } from "~/types";
+  import type { TodoType } from '~/types';
 
-const props = defineProps<{
-  todo: TodoType;
-}>();
+  const props = defineProps<{
+    todo: TodoType;
+  }>();
 
-const { deleteTodo } = useDeleteTodos();
-const { updateTodo } = useUpdateTodos();
+  const { deleteTodo } = useDeleteTodos();
+  const { updateTodo } = useUpdateTodos();
 
-const handleDeletingOfTodo = () => {
-  deleteTodo(props.todo);
-};
-
-const handleUpdateTodo = () => {
-  const newStatus =
-    props.todo.status === "Completed" ? "Not Started" : "Completed";
-
-  const newTodo = {
-    ...props.todo,
-    status: newStatus,
+  const handleDeletingOfTodo = () => {
+    deleteTodo(props.todo);
   };
 
-  updateTodo(newTodo);
-};
+  const handleUpdateTodo = () => {
+    const newStatus =
+      props.todo.status === 'Completed' ? 'Not Started' : 'Completed';
+
+    const newTodo = {
+      ...props.todo,
+      status: newStatus
+    };
+
+    updateTodo(newTodo);
+  };
 </script>
 
 <template>
@@ -44,12 +44,12 @@ const handleUpdateTodo = () => {
 </template>
 
 <style scoped>
-.todo {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 20px;
-}
+  .todo {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
 </style>
